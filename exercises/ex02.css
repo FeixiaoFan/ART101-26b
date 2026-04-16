@@ -1,0 +1,19 @@
+p{color: teal;}
+
+li{text-align:center;}
+
+html{font-family:"Arial", sans-serif;
+background-color:rgb(212, 232, 232)}
+
+p{background-color:aqua}
+
+.highlight_01{background-color: rgb(255, 192, 255);}
+.highlight_02{background-color: rgb(137, 200, 205);}
+.highlight_03{background-color:rgb(172, 139, 206)}
+
+#mem-small {width:100px}
+#mem-mid {width:300px}
+#mem-huge {width:500px}
+
+li{font-weight: bold}
+li strong{font-weight: normal}
