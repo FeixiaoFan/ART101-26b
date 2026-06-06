@@ -1,14 +1,15 @@
+// Variables and tables with values to be used for functions
 
-let count=0;
+let count = 0;
 
-let envTitle = {
+let titleVals = {
     title: "Somewhere Out in the Vast Universe",
     description: "A Romantic Story"
 };
 
-let cyreneNames =["Cyrene", "Demiurge", "Elysia?", "Mem", "PhiLia093"];
+let cyreneNames = ["Cyrene", "Demiurge", "Elysia?", "Mem", "PhiLia093"];
 
-let mainEntity = {
+let cyreneInfo = {
     title: "Information",
     Introduction: "Hi~ Please call me Cyrene.",
     Mood: "mood: inspired",
@@ -18,53 +19,48 @@ let mainEntity = {
     Location: "location: Amphoreus"
 };
 
-let pullCyrene = {
-    title: "Pull Cyrene!",
-    Pull: "You pulled for Cyrene " + count + "times!"
-};
+// Using the values in titleVals and displaying them
 
-$("#button-1").click( function(){
+$("#button-1").click(function(){
+    let message = "<h1>" + titleVals.title + "</h1>";
+    message = message + "<p>" + titleVals.description + "</p>";
 
-        let message1 = "<h1>" + envTitle.title + "</h1>";
-        message1 = message1 + "<p>" + envTitle.description + "</p>";
-
-        $("#meetcyrene").html(message1);
-
+    $("#meetcyrene").html(message);
 });
 
-$("#button-2").click( function(){
+// Using all the values within the cyreneNames table and displaying them
 
-        let message1 = "<h2>" + cyreneNames + "</h2>";
+$("#button-2").click(function(){
+    let message = "<h2>" + cyreneNames + "</h2>";
 
-        $("#meetcyrene").html(message1);
-
+    $("#meetcyrene").html(message);
 });
 
-$("#button-3").click( function(){
+// Using the cyreneInfo values to display
 
-        let message1 = "<h2>" + mainEntity.title + "</h2>";
+$("#button-3").click(function(){
+    let message = "<h2>" + cyreneInfo.title + "</h2>";
+    message = message + "<p>" + cyreneInfo.Introduction + "</p>";
+    message = message + "<p>" + cyreneInfo.Mood + "</p>";
+    message = message + "<p>" + cyreneInfo.Element + "</p>";
+    message = message + "<p>" + cyreneInfo.Path + "</p>";
+    message = message + "<p>" + cyreneInfo.Rarity + "</p>";
+    message = message + "<p>" + cyreneInfo.Location + "</p>";
 
-         message1 = message1 + "<p>" + mainEntity.Introduction + "</p>";
-         message1 = message1 + "<p>" + mainEntity.Mood + "</p>";
-         message1 = message1 + "<p>" + mainEntity.Element + "</p>";
-         message1 = message1 + "<p>" + mainEntity.Path + "</p>";
-         message1 = message1 + "<p>" + mainEntity.Rarity + "</p>";
-         message1 = message1 + "<p>" + mainEntity.Location + "</p>";
-
-        $("#meetcyrene").html(message1);
+    $("#meetcyrene").html(message);
 });
 
-$("#button-4").click( function(){
+// Button for incrementing the pull count and updating the text based on the count
 
-    let message1 = "<h2>" + pullCyrene.title + "</h2>";
-    count = count +1;
-    message1 = message1 + "<p> You pulled for Cyrene " + count + " times! </p>"
-    
+$("#button-4").click(function(){
+    let message = "<h2>Pull Cyrene!</h2>";
+    count = count + 1;
+    message = message + "<p> You pulled for Cyrene " + count + " times! </p>"
 
-
-      $("#meetcyrene").html(message1);
-
+    $("#meetcyrene").html(message);
 });
+
+// Function for going to different regions based on what the user inputs
 
 function travel() {
     let input = prompt("Where do you want to go?");
@@ -77,11 +73,22 @@ function travel() {
         $("body").css("background-image", "url(Okhema.webp)");
     }
 
-    else {
+    else { // If the input does not match one of the above values, defaults to this
         $("body").css("background-image", "url(AMPHOREUS.webp)");
     }
 }
 
+// Button that uses the travel function to go to the different regions
+
 $("#button-5").click(function() {
     travel();
 });
+
+$('.text').hover(
+    function() {
+        $(this).addClass('enlarged');
+    },
+    function() {
+        $(this).removeClass('enlarged');
+    }
+);

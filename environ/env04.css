@@ -57,20 +57,29 @@ body {
     gap: 15px;
     }
 
-    #text {
+   .text {
     width: 300px;
     margin: auto;
-    }
-
-    #text img {
+    transition: transform .3s ease;
+    transform-origin: center center;
+}
+    .text img {
     width: 250px;
     height: auto;
-    }
-
-    #text p {
+}
+    .text p {
     margin-top: 8px;
     text-align: center;
-    }
+}
 
+    .text.enlarged {
+    transform: scale(1.1);
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 
 }
